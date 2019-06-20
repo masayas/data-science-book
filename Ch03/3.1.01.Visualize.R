@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch03/")  # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定をmac用に変更
+
 #分布の形を捉える
 
 #高校生の身長データを読み込む
@@ -113,7 +116,7 @@ ggplot(DF)+                          #データフレームの指定
                     x    =gender),     #グループ分けを行う変数
                     fill ="grey",      #色の指定
                     width=.2,          #幅を狭くする（20％）
-                    alpha=0.7)+   　   #透明度の指定
+                    alpha=0.7)+        #透明度の指定
   #色分けの指定を足す
   scale_color_manual( values=c("darkgreen", "orange") )+
   scale_fill_manual(  values=c("darkgreen", "orange") )

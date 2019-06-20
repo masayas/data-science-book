@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch03/")  # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定をmac用に変更
+
 #多重共線性
 
 #目的変数：スタッフのモチベーション Score
