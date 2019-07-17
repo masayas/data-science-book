@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch04/") # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定1をmac用に変更
+
 #FA/PCA
 
 #ファイルを読み込んでデータフレームを作成する

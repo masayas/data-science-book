@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch03/") # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定1をmac用に変更
+
 #乱数の種を設定（実行の度に同じ乱数を発生させる）
 set.seed(120) #引数とする数値を変えると結果が変わる
 
@@ -7,6 +10,7 @@ A <- rnorm(10000,  1, 1) #平均 1, SD1
 B <- rnorm(10000, -1, 1) #平均-1, SD1
 
 #密度プロットを作成
+library(ggplot2)
 ggplot()+
   geom_density( aes(x=A),      #描画の対象となる変数
                 color="darkgreen", #線の色

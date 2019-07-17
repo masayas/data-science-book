@@ -1,5 +1,5 @@
 setwd("~/Dev/data-science-book/ch03/")  # current directoryを設定
-par(family = "HiraKakuProN-W3")  # 描画の文字設定をmac用に変更
+par(family = "HiraKakuProN-W3")  # 描画の文字設定1をmac用に変更
 
 #多重共線性
 
@@ -40,10 +40,15 @@ par(mfrow=c(1,1))
 
 #モデルの多重共線性について確認
 #ライブラリを読み込む
-library(car)
+# library(car)
 
 #vif(): VIFを計算する関数
-vif(LE1)
+# vif(LE1)
+
+vif_LE1 <- 1/(1 -(summary(LE1)$adj.r.squared))
+print(vif_LE1)
+vif_LE1 <- 1/(1 -(summary(LE1)$r.squared))
+print(vif_LE1)
 #10未満であることを目安とする
 
 
@@ -61,7 +66,10 @@ plot(LE2)
 par(mfrow=c(1,1))
 
 #モデルについてVIFの値を確認
-vif(LE2)
+# vif(LE2)
+vif_LE2 <- 1/(1 -(summary(LE2)$r.squared))
+print(vif_LE2)
+#10未満であることを目安とする
 
 #交互作用項と各変数との相関係数を確認
 cor(DF, DF$Meeting*DF$Reassign)
@@ -83,7 +91,9 @@ LE3 <- lm( Score ~ .+ Meeting*Reassign, data=DFc)
 summary(LE3)
 
 #VIFの値を確認
-vif(LE3)
+# vif(LE3)
+vif_LE3 <- 1/(1 -(summary(LE3)$r.squared))
+print(vif_LE3)
 
 #交互作用項と各変数との相関係数を確認
 cor(DFc, DFc$Meeting*DFc$Reassign)
@@ -117,8 +127,13 @@ LM6 <- lm( overtime ~ section + tenure
            + section*tenure, data=DF)
 
 #VIFの値を確認
-vif(LM5)
-vif(LM6)
+#vif(LM5)
+#vif(LM6)
+vif_LM5 <- 1/(1 -(summary(LM5)$r.squared))
+print(vif_LM5)
+vif_LM6 <- 1/(1 -(summary(LM6)$r.squared))
+print(vif_LM6)
+
 #ライブラリcarのvif()関数の仕様：
 # カテゴリ変数(3水準以上)がなければ通常のVIFを計算
 # カテゴリ変数(3水準以上)がある場合、GVIFを計算

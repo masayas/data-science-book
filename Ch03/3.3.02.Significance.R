@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch03/") # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定1をmac用に変更
+
 ## 有意確率と有意差検定
 
 #binom.test：二項検定

@@ -1,3 +1,6 @@
+setwd("~/Dev/data-science-book/ch03/") # current directoryを設定
+par(family = "HiraKakuProN-W3")  # 描画の文字設定1をmac用に変更
+
 #残差の分布
 
 #目的変数：残業時間 overtime
